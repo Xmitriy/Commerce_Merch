@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-x {
+  animation: scroll-x 40s linear infinite;
+  display: flex;
+}
+
+@keyframes pingpong-scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(calc(-50%));
+  }
+  55% {
+    transform: translateX(calc(-50%));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-pingpong-scroll-x {
+  animation: pingpong-scroll-x 32s linear infinite;
+}
+
+@keyframes pingpong-scroll-x-slow {
+  0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(calc(-50%));
+  }
+  55% {
+    transform: translateX(calc(-50%));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-pingpong-scroll-x-slow {
+  animation: pingpong-scroll-x-slow 60s linear infinite;
+}
+
+/* Make review cards even smaller */
+.min-w-\[180px\] {
+  min-width: 120px !important;
+}
+.max-w-\[200px\] {
+  max-width: 140px !important;
+}
+.p-2 {
+  padding: 6px !important;
+}
+.text-xs {
+  font-size: 11px !important;
+}
+.text-\[11px\] {
+  font-size: 10px !important;
+}
+.mx-1 {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+
+@keyframes marquee-x {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-50%));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-x {
+  animation: marquee-x 40s linear infinite;
+}
