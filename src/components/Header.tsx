@@ -87,22 +87,28 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-[#000000] border-t border-gray-200 dark:border-gray-700">
+        <div className="fixed inset-0 z-50 flex flex-col md:hidden">
+          {/* Overlay */}
+          <div
+            className="flex-1 bg-black/40 dark:bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          {/* Menu */}
+          <div className="w-full bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 shadow-lg animate-slide-up px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-3 rounded-lg text-base font-bold transition-colors duration-200 text-center ${
                   isActive(item.href)
                     ? 'text-blue-600 dark:text-white bg-blue-50 dark:bg-[#111111]'
                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-[#111111]'
                 }`}
               >
                 {item.name === 'Cart' ? (
-                  <div className="flex items-center space-x-2">
-                    <ShoppingCart className="h-4 w-4" />
+                  <div className="flex items-center justify-center space-x-2">
+                    <ShoppingCart className="h-5 w-5" />
                     <span>{item.name}</span>
                     {getTotalItems() > 0 && (
                       <span className="bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
