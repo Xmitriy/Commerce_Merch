@@ -40,7 +40,7 @@ const Cart: React.FC = () => {
             {items.map((item) => (
               <div
                 key={item.product.id}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-200"
+                className="bg-white dark:bg-black rounded-lg shadow-md p-6 transition-colors duration-200 border border-gray-200 dark:border-white"
               >
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
@@ -98,9 +98,9 @@ const Cart: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="mt-4 pt-4 bg-white dark:bg-black rounded-lg">
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-600 dark:text-gray-400">Subtotal</span>
+                    <span className="text-gray-900 dark:text-white">Subtotal</span>
                     <span className="font-medium text-gray-900 dark:text-white">
                       ${(item.product.price * item.quantity).toFixed(2)}
                     </span>
@@ -113,7 +113,7 @@ const Cart: React.FC = () => {
 
         {/* Order Summary */}
         <div className="lg:col-span-4 mt-8 lg:mt-0">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 sticky top-8">
+          <div className="bg-white dark:bg-black rounded-lg shadow-md p-6 transition-colors duration-200 border border-gray-200 dark:border-white sticky top-8">
             <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
               Order Summary
             </h2>

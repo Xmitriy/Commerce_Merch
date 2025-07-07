@@ -4,6 +4,13 @@ import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
 import { Product } from '../types';
 
+
+import video1 from '../video/1.mov';
+import video2 from '../video/2.mov';
+import video3 from '../video/3.mov';
+import video4 from '../video/4.mov';
+import video5 from '../video/5.mov';
+
 const ProductList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -104,7 +111,64 @@ const ProductList: React.FC = () => {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-      )}x
+      )}
+
+      {/* V Formation Video Footer */}
+      <div className="w-full flex flex-col items-center mt-20 mb-8">
+        <div className="flex flex-row justify-center items-end space-x-8
+          max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4">
+          {/* Leftmost video (bigger) */}
+          <video
+            src={video1}
+            className="w-40 h-56 object-cover rounded-xl shadow border-2 border-blue-200 dark:border-blue-100 hover:scale-105 transition-transform duration-200 cursor-pointer opacity-95 max-sm:w-64 max-sm:h-40 max-sm:mx-auto"
+            onClick={e => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+            controls={false}
+            muted
+            preload="metadata"
+            poster=""
+          />
+          {/* Left inner video */}
+          <video
+            src={video2}
+            className="w-48 h-64 object-cover rounded-xl shadow border-2 border-blue-200 dark:border-blue-100 hover:scale-105 transition-transform duration-200 cursor-pointer opacity-98 max-sm:w-64 max-sm:h-40 max-sm:mx-auto"
+            onClick={e => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+            controls={false}
+            muted
+            preload="metadata"
+            poster=""
+          />
+          {/* Center video (largest, but not bigger than inner) */}
+          <video
+            src={video3}
+            className="w-52 h-72 object-cover rounded-2xl shadow-lg border-2 border-blue-200 dark:border-blue-100 hover:scale-105 transition-transform duration-200 cursor-pointer max-sm:w-64 max-sm:h-40 max-sm:mx-auto"
+            onClick={e => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+            controls={false}
+            muted
+            preload="metadata"
+            poster=""
+          />
+          {/* Right inner video */}
+          <video
+            src={video4}
+            className="w-48 h-64 object-cover rounded-xl shadow border-2 border-blue-200 dark:border-blue-100 hover:scale-105 transition-transform duration-200 cursor-pointer opacity-98 max-sm:w-64 max-sm:h-40 max-sm:mx-auto"
+            onClick={e => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+            controls={false}
+            muted
+            preload="metadata"
+            poster=""
+          />
+          {/* Rightmost video (bigger) */}
+          <video
+            src={video5}
+            className="w-40 h-56 object-cover rounded-xl shadow border-2 border-blue-200 dark:border-blue-100 hover:scale-105 transition-transform duration-200 cursor-pointer opacity-95 max-sm:w-64 max-sm:h-40 max-sm:mx-auto"
+            onClick={e => (e.currentTarget.paused ? e.currentTarget.play() : e.currentTarget.pause())}
+            controls={false}
+            muted
+            preload="metadata"
+            poster=""
+          />
+        </div>
+      </div>
     </div>
   );
 };

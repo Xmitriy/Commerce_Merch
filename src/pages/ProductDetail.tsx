@@ -24,86 +24,15 @@ const ProductDetail: React.FC = () => {
 
   // Review data (жишээ)
   // Бүх барааны review-д зориулсан төрөл
-  interface Review {
-    user: string;
-    rating: number;
-    comment: string;
-    image: string;
-    verified: boolean;
-  }
+  // interface Review {
+  //   user: string;
+  //   rating: number;
+  //   comment: string;
+  //   image: string;
+  //   verified: boolean;
+  // }
 
-  const allReviews: Record<string, Review[]> = {
-    '7': [
-      { user: 'Bat-Erdene', rating: 5, comment: 'This Amethyst Camo Tee is really high quality, I wear it every day.', image: '', verified: true },
-      { user: 'Saraa', rating: 4, comment: 'The color is brighter than expected, very comfortable.', image: '', verified: true },
-      { user: 'Temuujin', rating: 3, comment: 'The size felt a bit big but the quality is good.', image: '', verified: true },
-      { user: 'Alex', rating: 5, comment: 'Absolutely love the fit and the camo pattern!', image: '', verified: true },
-      { user: 'Emily', rating: 5, comment: 'Super soft and stylish, would buy again.', image: '', verified: true },
-      { user: 'Chris', rating: 4, comment: 'Great for workouts, fabric feels premium.', image: '', verified: true },
-      { user: 'Olivia', rating: 5, comment: 'My favorite tee for the gym!', image: '', verified: true },
-      { user: 'David', rating: 5, comment: 'Perfect for both casual and active wear.', image: '', verified: true }
-    ],
-    '8': [
-      { user: 'Munkh-Erdene', rating: 5, comment: 'The Amethyst Pump Cover is perfect for the gym, great oversized fit.', image: '', verified: true },
-      { user: 'Oyun', rating: 4, comment: 'Looks even better than the pictures, fits well.', image: '', verified: true },
-      { user: 'Bilguun', rating: 3, comment: 'Thick material, keeps me warm in the cold.', image: '', verified: true },
-      { user: 'Samantha', rating: 5, comment: 'Oversized and comfy, just what I wanted.', image: '', verified: true },
-      { user: 'Michael', rating: 5, comment: 'The color is amazing and the quality is top-notch.', image: '', verified: true },
-      { user: 'Jessica', rating: 4, comment: 'Very warm and stylish, love it!', image: '', verified: true },
-      { user: 'Daniel', rating: 5, comment: 'Perfect for chilly mornings at the gym.', image: '', verified: true },
-      { user: 'Sophia', rating: 5, comment: 'My go-to pump cover for every session.', image: '', verified: true }
-    ],
-    '9': [
-      { user: 'Solongo', rating: 5, comment: 'The Arctic Camo Pump is the perfect choice for winter.', image: '', verified: true },
-      { user: 'Enkhjin', rating: 4, comment: 'Unique design, very comfortable.', image: '', verified: true },
-      { user: 'Ganbold', rating: 3, comment: 'The color was a bit lighter than I expected.', image: '', verified: true },
-      { user: 'Lucas', rating: 5, comment: 'Super warm and fits perfectly.', image: '', verified: true },
-      { user: 'Mia', rating: 5, comment: 'Love the camo look, very trendy.', image: '', verified: true },
-      { user: 'Ethan', rating: 4, comment: 'Great for outdoor runs in the cold.', image: '', verified: true },
-      { user: 'Ava', rating: 5, comment: 'My friends keep asking where I got it!', image: '', verified: true },
-      { user: 'Noah', rating: 5, comment: 'Best winter pump cover I own.', image: '', verified: true }
-    ],
-    '10': [
-      { user: 'Nomin', rating: 5, comment: 'The Heavyweight Shadow Pump Cover is super warm.', image: '', verified: true },
-      { user: 'Tuguldur', rating: 4, comment: 'Comfortable to wear, nice color.', image: '', verified: true },
-      { user: 'Sodon', rating: 3, comment: 'The size was a bit big for me.', image: '', verified: true },
-      { user: 'Liam', rating: 5, comment: 'Very durable and keeps me warm.', image: '', verified: true },
-      { user: 'Emma', rating: 5, comment: 'Stylish and practical for cold days.', image: '', verified: true },
-      { user: 'Benjamin', rating: 4, comment: 'Love the heavyweight feel.', image: '', verified: true },
-      { user: 'Charlotte', rating: 5, comment: 'Perfect for layering in winter.', image: '', verified: true },
-      { user: 'James', rating: 5, comment: 'Shadow color is unique and cool.', image: '', verified: true }
-    ],
-    '11': [
-      { user: 'Bayarmaa', rating: 5, comment: 'Amethyst Heavyweight Sweatpants are very warm and high quality.', image: '', verified: true },
-      { user: 'Erdene', rating: 4, comment: 'Very comfortable, love the color.', image: '', verified: true },
-      { user: 'Saruul', rating: 3, comment: 'Material is good but a bit thick.', image: '', verified: true },
-      { user: 'Harper', rating: 5, comment: 'Super soft and cozy, perfect for lounging.', image: '', verified: true },
-      { user: 'Elijah', rating: 5, comment: 'Great fit and very warm.', image: '', verified: true },
-      { user: 'Amelia', rating: 4, comment: 'Love the heavyweight material.', image: '', verified: true },
-      { user: 'Logan', rating: 5, comment: 'My favorite sweatpants for winter.', image: '', verified: true },
-      { user: 'Isabella', rating: 5, comment: 'So comfortable, I wear them all the time.', image: '', verified: true }
-    ],
-    '12': [
-      { user: 'Temuulen', rating: 5, comment: 'Arctic Camo Heavyweight Sweatpants are perfect for winter.', image: '', verified: true },
-      { user: 'Maral', rating: 4, comment: 'Unique style, fits well.', image: '', verified: true },
-      { user: 'Batbold', rating: 3, comment: 'The color was a bit too light for me.', image: '', verified: true },
-      { user: 'Mason', rating: 5, comment: 'Super warm and stylish.', image: '', verified: true },
-      { user: 'Evelyn', rating: 5, comment: 'Love the camo print, very trendy.', image: '', verified: true },
-      { user: 'Alexander', rating: 4, comment: 'Great for outdoor activities.', image: '', verified: true },
-      { user: 'Avery', rating: 5, comment: 'Best sweatpants I have owned.', image: '', verified: true },
-      { user: 'Ella', rating: 5, comment: 'Perfect for cold weather.', image: '', verified: true }
-    ],
-    '13': [
-      { user: 'Suvd', rating: 5, comment: 'Sunwashed Sweatpants are super soft and comfy.', image: '', verified: true },
-      { user: 'Bat-Orgil', rating: 4, comment: 'Very comfortable, love the color.', image: '', verified: true },
-      { user: 'Enkhzul', rating: 3, comment: 'The size was a bit big for me.', image: '', verified: true },
-      { user: 'Jack', rating: 5, comment: 'Love the sunwashed look, very unique.', image: '', verified: true },
-      { user: 'Grace', rating: 5, comment: 'So soft and cozy, perfect for home.', image: '', verified: true },
-      { user: 'Henry', rating: 4, comment: 'Great fit and color.', image: '', verified: true },
-      { user: 'Chloe', rating: 5, comment: 'My go-to pants for relaxing.', image: '', verified: true },
-      { user: 'Lucas', rating: 5, comment: 'Super comfortable and stylish.', image: '', verified: true }
-    ]
-  };
+  // const allReviews: Record<string, Review[]> = {};
 
   // Color options for Seam Shorts
   const seamShortsColors = [
@@ -123,7 +52,14 @@ const ProductDetail: React.FC = () => {
   ];
   const isTacticalCargo = product.id === '15';
 
-  const reviews: Review[] = allReviews[product.id] || [];
+  // Color options for Scorpion Acid Wash Stringer
+  const isScorpionStringer = product.id === '16';
+  const scorpionStringerColors = [
+    { name: 'White', value: 'white', bg: '#fff', border: '#222', imageIdx: 0 },
+    { name: 'Black', value: 'black', bg: '#222', border: '#fff', imageIdx: 2 },
+  ];
+
+  const reviews: any[] = [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}>
@@ -177,7 +113,7 @@ const ProductDetail: React.FC = () => {
             </h1>
             
             <div className="mt-3">
-              <p className="text-3xl font-bold text-gray-900">
+              <p className="text-3xl font-bold text-gray-900 dark:text-gray-200">
                 ${product.price.toFixed(2)}
               </p>
             </div>
@@ -251,6 +187,30 @@ const ProductDetail: React.FC = () => {
               </div>
               <div className="mt-2 text-sm text-gray-700 dark:text-gray-200 font-medium">
                 {tacticalCargoColors[selectedImageIndex]?.name}
+              </div>
+            </div>
+          )}
+
+          {/* Color Picker for Scorpion Acid Wash Stringer */}
+          {isScorpionStringer && (
+            <div className="mb-4">
+              <div className="flex items-center gap-2">
+                {scorpionStringerColors.map((color) => (
+                  <button
+                    key={color.name}
+                    onClick={() => setSelectedImageIndex(color.imageIdx)}
+                    className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${selectedImageIndex === color.imageIdx ? 'border-blue-600 scale-110' : 'border-gray-300'}`}
+                    style={{ background: color.bg, borderColor: color.border }}
+                    aria-label={color.name}
+                  >
+                    {selectedImageIndex === color.imageIdx && (
+                      <span className="block w-3 h-3 bg-white rounded-full border border-blue-600" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              <div className="mt-2 text-sm text-gray-700 dark:text-gray-200 font-medium">
+                {scorpionStringerColors.find(c => c.imageIdx === selectedImageIndex)?.name}
               </div>
             </div>
           )}
@@ -411,7 +371,7 @@ const ProductDetail: React.FC = () => {
           <button
             onClick={handleAddToCart}
             disabled={!product.inStock}
-            className="w-full bg-black border border-white text-white hover:bg-gray-900 disabled:bg-gray-700 disabled:border-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed font-medium py-3 px-6 rounded-md transition-colors duration-200 text-lg mb-4"
+            className="w-full bg-white border border-black text-black hover:bg-black hover:text-white dark:bg-black dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black disabled:bg-gray-200 disabled:border-gray-300 disabled:text-gray-400 dark:disabled:bg-gray-700 dark:disabled:border-gray-500 dark:disabled:text-gray-400 disabled:cursor-not-allowed font-medium py-3 px-6 rounded-md transition-colors duration-200 text-lg mb-4"
             style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}
           >
             ADD TO CART

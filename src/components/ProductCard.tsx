@@ -56,7 +56,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <button
           onClick={handleAddToCart}
           disabled={!product.inStock}
-          className="w-full flex items-center justify-center space-x-2 bg-black border border-white text-white hover:bg-gray-900 disabled:bg-gray-700 disabled:border-gray-500 disabled:text-gray-400 disabled:cursor-not-allowed font-medium py-2 px-4 rounded-md transition-colors duration-200"
+          className="w-full flex items-center justify-center space-x-2 bg-white dark:bg-black border border-gray-900 dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:border-gray-300 dark:disabled:border-gray-500 disabled:text-gray-400 dark:disabled:text-gray-400 disabled:cursor-not-allowed font-medium py-2 px-4 rounded-md transition-colors duration-200"
           style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}
         >
           <ShoppingCart className="h-4 w-4" />

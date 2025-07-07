@@ -37,6 +37,9 @@ import SeamShortsNavyBlue from '../Image/SeamShortsNavyBlue.png';
 import SeamShortsAll from '../Image/SeamShortsAll.png';
 import TacticalScorpionCargoBlack from '../Image/TacticalScorpionCargoBlack.png';
 import TacticalScorpionCargoWhite from '../Image/TacticalScorpionCargoWhite.png';
+import ScorpionAcidWashStringerWhite from '../Image/ScorpionAcidWashStringerWhite.png';
+import ScorpionAcidWashStringerWhite2 from '../Image/ScorpionAcidWashStringerWhite2.png';
+import ScorpionAcidWashStringerBlack from '../Image/ScorpionAcidWashStringerBlack.png';
 
 export const products: Product[] = [
   // 1
@@ -196,6 +199,26 @@ export const products: Product[] = [
       { size: '2X-Large', sidePantsLength: 112, elasticWaist: 84, hips: 120, kneeWidth: 42, pantsLength: 107, frontRise: 33, backRise: 43 },
       { size: '3X-Large', sidePantsLength: 114, elasticWaist: 88, hips: 124, kneeWidth: 43, pantsLength: 109, frontRise: 34, backRise: 44 },
       { size: '4X-Large', sidePantsLength: 116, elasticWaist: 92, hips: 128, kneeWidth: 44, pantsLength: 111, frontRise: 35, backRise: 45 }
+    ]
+  },
+  // 10
+  {
+    id: '16',
+    name: 'Scorpion Acid',
+    price: 29.99,
+    category: 'T-Shirt',
+    images: [ScorpionAcidWashStringerWhite, ScorpionAcidWashStringerWhite2, ScorpionAcidWashStringerBlack],
+    description: 'The Scorpion Acid Wash Stringer is crafted for those who demand both style and performance. Available in classic White and Black, this stringer features a unique acid wash finish and a bold scorpion logo. Lightweight, breathable, and cut for maximum range of motion—perfect for intense training or street style.',
+    inStock: true,
+    sizes: ['Small', 'Medium', 'Large', 'X-Large', '2X-Large', '3X-Large', '4X-Large'],
+    sizingGuide: [
+      { size: 'Small', length: 66.0, width: 24.3, sleeve: 0 },
+      { size: 'Medium', length: 68.0, width: 26.3, sleeve: 0 },
+      { size: 'Large', length: 71.0, width: 29.0, sleeve: 0 },
+      { size: 'X-Large', length: 74.0, width: 32.3, sleeve: 0 },
+      { size: '2X-Large', length: 76.0, width: 35.3, sleeve: 0 },
+      { size: '3X-Large', length: 78.0, width: 38.3, sleeve: 0 },
+      { size: '4X-Large', length: 80.0, width: 41.3, sleeve: 0 }
     ]
   }
 ];
